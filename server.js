@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const dbNotes = require('./db/db.json');
+const { v4: uuidv4 } = require('uuid');
 
 // Boilerplate Express code below:
 // Instantiate Express.js
@@ -23,7 +24,21 @@ app.get('/notes', (req, res) =>
 // Creating a route for the api/notes pathway to read the db.json file
 app.get('/api/notes', (req, res) => res.json(dbNotes));
 
+// Creating a POST request for the /api/notes pathway
+app.post('/api/notes', (req, res) => {
+    // Let the client know that their POST request was received
+    res.json(`${req.method} request received`);
+    // Show the user agent information in the terminal
+    console.info(req.rawHeaders);
+    // Log our request to the terminal
+    console.info(`${req.method} request received`);
+});
+
 // Listen method to 'open' up the specified PORT, to allow communication
 app.listen(PORT, () =>
     console.log(`http://localhost:${PORT}`)
 );
+
+// Allows a unique ID to be generated via 'uuid' NPM package
+let uniqueID = uuidv4();
+console.log(uniqueID);
