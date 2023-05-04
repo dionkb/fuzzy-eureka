@@ -6,8 +6,8 @@ const express = require('express');
 // const { v4: uuidv4 } = require('uuid'); May not need here now that I am making modular routes
 
 // Required routing files using modular routing
-const htmlPath = require('./routes/html')
-const apiPath = require('./routes/api');
+const htmlPath = require('./routes/html/html')
+const apiPath = require('./routes/api/api');
 
 // Boilerplate Express code below:
 // Instantiate Express.js
@@ -22,6 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Middleware allowing the use of the public folder in shortened code
 app.use(express.static('public'));
+
+// Using modular routing pathways
+app.use('/', htmlPath);
+app.use('/api', apiPath);
 
 // Listen method to 'open' up the specified PORT, to allow communication
 app.listen(PORT, () =>
