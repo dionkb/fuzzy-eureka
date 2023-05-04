@@ -1,10 +1,13 @@
-
+// Required packages/modules to run properly
+// const path = require('path'); May not need here now that I am making modular routes
+const apiData = require('express').Router();
+const dbNotes = require('../../db/db.json');
 
 // Creating a route for the api/notes pathway to read the db.json file
-app.get('/api/notes', (req, res) => res.json(dbNotes));
+apiData.get('/api/notes', (req, res) => res.json(dbNotes));
 
 // Creating a POST request for the /api/notes pathway
-// app.post('/api/notes', (req, res) => {
+// apiData.post('/api/notes', (req, res) => {
 //     // Let the client know that their POST request was received
 //     res.json(`${req.method} request received`);
 //     // Log our request to the terminal
@@ -22,3 +25,5 @@ app.get('/api/notes', (req, res) => res.json(dbNotes));
     //     res.json('Request body must at least contain a title');
     // }
 // });
+
+module.exports = apiData;
