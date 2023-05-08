@@ -26,7 +26,7 @@ apiRouter.post('/notes', (req, res) => {
                 savedNotes.push(newNote);
                 fs.writeFile(`./db/db.json`, JSON.stringify(savedNotes), (err) => {
                     err ? console.error(err) : console.info(`Success!`)
-            });
+                });
             }
         });
     }
