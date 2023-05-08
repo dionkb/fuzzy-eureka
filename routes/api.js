@@ -35,5 +35,21 @@ apiRouter.post('/notes', (req, res) => {
     };
 });
 
+// apiRouter.delete('/api/notes/:id', (req, res) => {
+//     fs.readFile(`./db/db.json`, 'utf8', (err, data) => {
+//         if (err) {
+//             console.error(err);
+//         }
+//         else {
+//             let savedNotes = JSON.parse(data);
+//             // ***** NEED TO FIGURE OUT HOW TO FILTER ******
+//             let keptNotes = savedNotes.filter(newNote);
+//             fs.writeFile(`./db/db.json`, JSON.stringify(keptNotes), (err) => {
+//                 err ? console.error(err) : console.info(`Success!`)
+//             });
+//         }
+//     });
+// });
+
 // Allows these pathways to be imported by main server.js
 module.exports = apiRouter;
