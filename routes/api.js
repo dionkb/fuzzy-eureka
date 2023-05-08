@@ -35,6 +35,8 @@ apiRouter.post('/notes', (req, res) => {
     };
 });
 
+
+// BASE CODE THAT MAY BE USED FOR FUTURE FEATURES!
 // apiRouter.delete('/api/notes/:id', (req, res) => {
 //     fs.readFile(`./db/db.json`, 'utf8', (err, data) => {
 //         if (err) {
