@@ -8,7 +8,7 @@
   This project was built in order to set up the backend of an existing note taking application which was provided as starter code. The application allows a user to use GET, POST, etc., requests in order to take notes and save them. The application stores the existing notes and recalls them for the user upon re-entering the application.
 
   Screenshot or GIF of final output:  
-  ![screenshot or gif](./.\assets\Screenshot.jpg)
+  ![screenshot or gif](.\assets\Screenshot.jpg)
 
   ## Table of Contents
   * [Dependencies](#dependencies)
